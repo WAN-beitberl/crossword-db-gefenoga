@@ -1,0 +1,33 @@
+1. we can store the data in 2 table with certain columns:
+	TABLE 1- THE BOARD:
+	width- to store board's width, for display and game purposes.
+	height- same purposes.
+
+	TABLE 2- A WORD:
+	the word - what word the user need to find
+	the index of the start of the word - to know where to place the word on the board and where to check the user for the word.
+	the meaning (hint) for the word - for the purposes of the game
+	the type of the word (Across/Down) - to know how to display the word, check the user's letters and place on the board.
+	
+
+2. In my opinion, the following information should not be stored in the table:
+	index of each word- it can be found using the available data (across/dowm + LEN(word) + the current square the user is in)
+	length of the word- using LEN(word) will find it
+	blank spaces- in the board, any square with no letter in it will be a blank space without the need to store these.
+
+
+
+
+4. THE COMMANDS: 
+
+	create table Board(two int width, height);
+	insert into Board values(40, 50);
+	select * from Board;
+	>> 40|50
+	
+	create table Word(three string word, meaning, acrossORdowm, one int startIndex);
+	insert into Word values('word', 'combination of letters', 'down', 6);
+	select * from Word;
+	>> word|combination of letters|down|6
+	
+	
